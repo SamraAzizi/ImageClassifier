@@ -18,3 +18,10 @@ def preprocess_image(image):
     img = cv2.resize(img, (244, 244))
     img = preprocess_input(img)
     img = np.expand_dims(img,axis=0)
+    return img
+
+def classify_image(model, image):
+    try:
+        preprocess_image = preprocess_image(image)
+        predictions = model.predict(preprocess_image)
+        decode_predictions = decode_predictions(predictions, top=3)[0]
