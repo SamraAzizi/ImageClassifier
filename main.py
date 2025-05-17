@@ -12,3 +12,9 @@ from PIL import Image
 def load_model():
     model = MobileNetV2(weights="imagenet")
     return model
+
+def preprocess_image(image):
+    img = np.array(image)
+    img = cv2.resize(img, (244, 244))
+    img = preprocess_input(img)
+    img = np.expand_dims(img,axis=0)
