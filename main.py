@@ -35,3 +35,11 @@ def main():
     st.set_page_config(page_title="AI Image Classifier", page_icon="🖼️", layout="centered")
     st.title("AI Image Classifier ")
     st.write("Upload an image and let the AI tell you what is in it!")
+
+    @st.cache_resource
+    def load_cache_model():
+        return load_model()
+    
+    model = load_cache_model()
+
+    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
