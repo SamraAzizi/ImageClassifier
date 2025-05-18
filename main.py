@@ -43,3 +43,13 @@ def main():
     model = load_cache_model()
 
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
+
+    if uploaded_file is not None:
+        image = st.image(
+            uploaded_file, caption="Uploaded Image", use_container_width=True
+        )
+
+        btn = st.button("Classifiy Image")
+        if btn:
+            with st.spinner("Analyzing Image..."):
+                image =
