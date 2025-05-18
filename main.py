@@ -25,3 +25,8 @@ def classify_image(model, image):
         preprocess_image = preprocess_image(image)
         predictions = model.predict(preprocess_image)
         decode_predictions = decode_predictions(predictions, top=3)[0]
+        return decode_predictions
+    
+    except Exception as e:
+        st.error(f"Error classifier image: {str(e)}")
+        return None
