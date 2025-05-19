@@ -53,8 +53,11 @@ def main():
         if btn:
             with st.spinner("Analyzing Image..."):
                 image = Image.open(uploaded_file)
-                predictions = classify_image(image)
+                predictions = classify_image(model, image)
                 if predictions:
                     st.subheader("Predictions")
                     for _, label, score in predictions:
                         st.write(f"**{label}**: {score:.2%}")
+
+if __name__ == "__main__":
+    main()
