@@ -19,3 +19,17 @@ Install dependencies using pip:
 
 ```bash
 pip install streamlit tensorflow opencv-python pillow numpy
+```
+
+## How To Run
+1. save the scripts(e.g `main.py`)
+2. Open your terminal and run:
+```bash
+streamlit run main.py
+```
+
+3. A browser window will open. Upload an image and click "Classify Image" to see predictions
+
+## Model Details
+
+- Model Used: `MobileNetV2
