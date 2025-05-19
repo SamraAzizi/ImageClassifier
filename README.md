@@ -1,10 +1,10 @@
-# 🖼️ AI Image Classifier
+#  AI Image Classifier
 
 This is a simple web-based image classification app built with **Streamlit**, **TensorFlow (Keras)**, and **OpenCV**. It uses the pre-trained **MobileNetV2** model to identify the contents of uploaded images and returns the top 3 predictions.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Upload JPG or PNG images
 - Classify images using the MobileNetV2 model trained on ImageNet
@@ -13,7 +13,7 @@ This is a simple web-based image classification app built with **Streamlit**, **
 
 ---
 
-## 📦 Requirements
+##  Requirements
 
 Install dependencies using pip:
 
@@ -39,3 +39,10 @@ streamlit run main.py
 ## Known Issues
 - The image is resized to `244x244` in code, which is not ideal for MobileNetV2. Recommended to use `224x224`.
 - There is a variable name conflict in `classify_image()` function `(preprocess_image = preprocess_image(...))`, which can break the code. Consider renaming the variable or the function to avoid shadowing.
+
+## To Do 
+- Fix image resize size to 224x224
+- Rename conflicting variable names
+- Add webcam support
+- Improve UI with drag-and-drop or preview
+- Support multiple models (e.g., ResNet, Inception)
