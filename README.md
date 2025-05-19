@@ -33,3 +33,9 @@ streamlit run main.py
 ## Model Details
 
 - Model Used: `MobileNetV2
+- Weights: Pre-trained on the ImageNet dataset
+- Input Image Size: (Note: MobileNetV2 expects 224x244 input)
+
+## Known Issues
+- The image is resized to `244x244` in code, which is not ideal for MobileNetV2. Recommended to use `224x224`.
+- There is a variable name conflict in `classify_image()` function `(preprocess_image = preprocess_image(...))`, which can break the code. Consider renaming the variable or the function to avoid shadowing.
