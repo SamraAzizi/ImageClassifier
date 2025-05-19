@@ -30,6 +30,26 @@ streamlit run main.py
 
 3. A browser window will open. Upload an image and click "Classify Image" to see predictions
 
+##  Code Explanation
+
+Here’s a breakdown of what each part of the script does:
+
+### `load_model()`
+- Loads the pre-trained MobileNetV2 model with ImageNet weights.
+- This model can classify 1000 types of objects from images.
+
+### `preprocess_image(image)`
+- Converts the image into a NumPy array.
+- Resizes it to 244x244 (should ideally be 224x224 for MobileNetV2).
+- Applies preprocessing (normalization) required by MobileNetV2.
+- Adds a batch dimension so the model can process it.
+
+### `classify_image(model, image)`
+- Takes the model and a preprocessed image.
+- Predicts the class using the model.
+
+
+
 ## Model Details
 
 - Model Used: `MobileNetV2
