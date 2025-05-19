@@ -47,6 +47,17 @@ Here’s a breakdown of what each part of the script does:
 ### `classify_image(model, image)`
 - Takes the model and a preprocessed image.
 - Predicts the class using the model.
+- Decodes the top 3 predictions to readable labels and confidence scores.
+- Handles any errors with a Streamlit error message.
+
+### `main()`
+- Streamlit UI starts here.
+- Displays the app title and file uploader.
+- Loads the model with caching to prevent reloading every time.
+- Shows the uploaded image.
+- When the "Classify Image" button is clicked:
+  - The image is passed to the model for classification.
+  - The top 3 predicted labels and scores are displayed.
 
 
 
